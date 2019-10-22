@@ -20,6 +20,54 @@ script:  https://cdnjs.cloudflare.com/ajax/libs/echarts/4.2.1/echarts-en.js
 Test
 Beschreibung, was die Studierenden auf den nächsten Seiten vorfinden!
 
+
+```javascript
+var s = "JavaScript syntax test highlighting";
+alert(s);
+s;
+```
+<script>@input</script>
+
+HTML Code zum einbetten in die Seite (File Input)
+
+```html
+<input type="file" onchange="getFileContent(this.files)">
+<pre id="content">
+</pre>
+```
+
+JS Code zum auslesen der Dateien
+
+```javascript
+window.getFileContent = (files) => {
+	if (files.length !== 1) {
+  	// Sicherstellen, dass nur eine Datei hochgeladen wurde.
+    return;
+  }
+  const reader = new FileReader();
+  reader.addEventListener("loadend", () => {
+  	// in reader.result stehen die bytes
+    // also müssen wir es noch in text umwandeln.
+
+    const decoder = new TextDecoder();
+    const textValue = decoder.decode(reader.result);
+
+    // Jetzt kannst du dinge mit dem text machen
+  	document.getElementById("content").innerText = textValue;
+  });
+  reader.readAsArrayBuffer(files[0]);
+}
+```
+
+
+
+
+
+
+
+
+
+
 <br/>
 
 Beschreibung, wie die Studierenden die nachfolgenden Seiten und Diagrammme nutzen können!
