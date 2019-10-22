@@ -30,11 +30,9 @@ s;
 
 HTML Code zum einbetten in die Seite (File Input)
 
-```html
 <input type="file" onchange="getFileContent(this.files)">
 <pre id="content">
 </pre>
-```
 
 JS Code zum auslesen der Dateien
 
@@ -58,7 +56,7 @@ window.getFileContent = (files) => {
   reader.readAsArrayBuffer(files[0]);
 }
 ```
-
+<script>@input</script>
 
 
 
